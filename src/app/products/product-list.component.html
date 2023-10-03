@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table" *ngIf="products.length">
+            <table class="table" *ngIf="filteredProducts.length">
                 <thead>
                     <tr>
                         <th>
@@ -36,7 +36,7 @@
                     <tr *ngFor="let product of filteredProducts">
                         <td ><img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName"
                             [style.width.px]="imageWidth" [style.margin.px] = "imageMargin"></td>
-                        <td>{{product.productName | uppercase}}</td>
+                        <td><a [routerLink]="['/products', product.productId]">{{product.productName | uppercase}}</a></td>
                         <td>{{product.productCode | converToSpacePipe : '-'}}</td>
                         <td>{{product.description}}</td>
                         <td>{{product.boxedDate | date : 'fullDate'}}</td>

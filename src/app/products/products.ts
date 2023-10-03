@@ -2,7 +2,7 @@ export interface IProducts {
     productId : number;
     productName : string;
     productCode : string;
-    boxedDate : Date;
+    boxedDate : string;
     description : string;
     starRating : number;
     price : number;
